@@ -11,29 +11,35 @@ public class SetenceReplacer {
 	public void replaceSentence() {
 		int numSpaces = 0;
 		//count spaces
-		for(int i = 0; i > sentence.length(); i++) {
+		for(int i = 0; i < sentence.length(); i++) {
 			if(sentence.charAt(i) == ' ') {
 				numSpaces++;
 			}
 		}
-		int newStringLength = numSpaces * 3 + sentence.length();
-		int index = sentence.length();
+		
+		int newStringLength = numSpaces * 2 + sentence.length();
 		char[] Char = new char[newStringLength];
-		for(int j = sentence.length(); j > 0; j--) {
+
+		System.out.println(newStringLength);
+		for(int j = sentence.length() - 1; j >= 0; j--) {
 			if(sentence.charAt(j) == ' ') {
-				Char[j] = '0';
-				Char[j-1] = '2';
-				Char[j-2] = '%';
-				
+				Char[newStringLength-1] = '0';
+				Char[newStringLength-2] = '2';
+				Char[newStringLength-3] = '%';
+				newStringLength -= 3;
 			}
 			else {
-				Char[j] = sentence.charAt(j);
+				Char[newStringLength -1] = sentence.charAt(j);
+				newStringLength--;
+				System.out.println(newStringLength);
 			}
 		}
+		printOutput(Char);
 	}
 	
-	public void printOutput() {
-		
+	// print output
+	public void printOutput(char[] charString) {
+		System.out.println(charString);
 	}
 	
 }
