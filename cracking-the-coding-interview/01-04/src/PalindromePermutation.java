@@ -19,7 +19,7 @@ public class PalindromePermutation {
 		char[] charArr = str.toCharArray();
 		countCharactersInArray(charArr);
 		int count = countOddCharacters(charCountArr);
-		//if there are 
+		//if there are 1 or 0 odd counts then return true
 		if(count <= 1) {
 			System.out.println("true");
 			return true;
