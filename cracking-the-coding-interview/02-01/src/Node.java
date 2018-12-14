@@ -3,8 +3,8 @@ public class Node {
 		int value;
 		Node next;
 		
-		Node (int v){
+		public Node(int v){
 			value = v;
 			next = null;
 		}
-	}
+}
