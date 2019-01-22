@@ -27,7 +27,27 @@ public class Intersection {
 
 			}
 		}
+		if(tempNode2 != tempNode1) {
+			return null;
+		}
+		
+		int difflength = node1length - node2length;
+		LinkedListNode shorterList = node1length<=node2length ? tempNode1 : tempNode2;
+		LinkedListNode longerList = node1length>=node2length ? tempNode2 : tempNode1;
 
+		for(int i = 1; i < difflength; i++) {
+			// iterate longerlist
+		}
+		
+		for(int j = 0; j < node1length; j++) {
+			if(tempNode1 == tempNode2) {
+				return tempNode1;
+			}
+			tempNode1 = tempNode1.next;
+			tempNode2 = tempNode2.next;
+
+		}
+		
 		return node1;
 	}
 }
